@@ -1,5 +1,5 @@
 # Description
-- app similar to google notes that allows you to add and save your notes
+app similar to google notes that allows you to add and save your notes
 
 
 ## Website Link
