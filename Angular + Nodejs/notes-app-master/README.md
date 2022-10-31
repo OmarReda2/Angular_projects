@@ -3,7 +3,7 @@
 - `Note` the backend was implemented by other students
 
 ## Website Link
-[mynewnotes.netlify.app/](mynewnotes.netlify.app/)
+[https://mynewnotes.netlify.app/](https://mynewnotes.netlify.app/)
 
 
 
