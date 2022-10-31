@@ -1,0 +1,76 @@
+<div class="row container-fluid mt-3">
+
+  <!-- Doors -->
+  <div class="col-6">
+    <div class="alert alert-success mb-5">
+
+      <h3>Doors</h3>
+      <h5 class="mt-5">ID:</h5>
+      <input type="text" class="form-control" [(ngModel)]="doorId" placeholder="select a door from 'Doors' section in the previos page ">
+
+      <h5 class="mt-5">Status:</h5>
+      <input type="text" class="form-control" [(ngModel)]="doorStatus" placeholder="type 'close' or 'open'">
+
+      <button class="btn btn-success mt-3" (click)="updateDoor()">Click</button>
+    </div>
+  </div>
+  <!-- ----------------------------------------------------- -->
+
+
+
+
+
+
+
+
+  <!-- windows -->
+  <div class="col-6">
+    <div class="alert alert-warning mb-5">
+      <h3>Windows</h3>
+
+      <h5 class="mt-5">ID:</h5>
+      <input type="text" class="form-control" [(ngModel)]="windowId" placeholder="select a door from 'Windows' section in the previos page ">
+
+      <h5 class="mt-5">Status:</h5>
+      <input type="text" class="form-control" [(ngModel)]="windowStatus"placeholder="type 'close' or 'open'">
+
+
+      <button class="btn btn-warning mt-3" (click)="updateWindow()">Click</button>
+    </div>
+  </div>
+  <!-- ----------------------------------------------------- -->
+
+
+
+
+
+
+  <!-- battery -->
+  <div class="col-6">
+    <div class="alert alert-primary mb-5">
+      <h3>Battery</h3>
+
+      <input type="number" class="form-control" [(ngModel)]="batteryStatus" placeholder="type number from 1 to 100 ">
+      <button class="btn btn-primary mt-3" (click)="updateBattery()">Click</button>
+
+    </div>
+  </div>
+  <!-- ----------------------------------------------------- -->
+
+
+
+
+
+
+
+
+  <!-- motion -->
+  <div class="col-6">
+    <div class="alert alert-dark mb-5">
+      <h3>Motion</h3>
+      <input type="text" class="form-control" [(ngModel)]="motion" placeholder="type 'detected' or 'not detected'">
+      <button class="btn btn-dark mt-3" (click)="updateMotion()">Click</button>
+    </div>
+  </div>
+  <!-- ----------------------------------------------------- -->
+</div>

@@ -1,0 +1,11 @@
+nav{
+    background-color: #131722 !important;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white
+}
+
+i{
+    margin-right: 20px;
+}

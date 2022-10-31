@@ -1,0 +1,22 @@
+
+
+<div class="container" *ngIf="recieved">
+    <div class="row">
+        <div class="col-md-3">
+            <div>
+                <img [src]="'https://image.tmdb.org/t/p/w500' + singleMovieContainer.poster_path" class="w-100">
+            </div>
+        </div>
+
+        <div class="col-md-9">
+            <div>
+                <h1>{{singleMovieContainer.title}}</h1>
+                <p>{{singleMovieContainer.overview}}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

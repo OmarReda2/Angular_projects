@@ -1,0 +1,80 @@
+<div class=" w-100 m-auto text-center title ">
+    <h2 class="fw-bold ">PORTFOLIO</h2>
+        
+        <div class="star-style mt-2 mb-4">
+            <i class="fa-solid fa-star"></i><span class="star-style-span"></span>
+        </div>
+    
+</div>
+
+<section class="text-center px-5">
+    <div class="row gy-5 gx-5 ">
+        <div class="col-lg-4  col-xl-4 col-sm-6" *ngFor="let myImg of myImgs">
+            <div class="image" (mouseover)="imageCover.style.display = 'flex';">
+
+                <img [src]="myImg.immSrc" class="w-100 rounded-3">
+
+                <div class="image-cover w-100 h-100 rounded-3 align-items-center justify-content-center" #imageCover
+                    (click)="infoContainer.style.width = '100%';
+                             infoContainer.style.transition = 'width 0s ease 0s';
+                             info.style.opacity = '100%';
+                             info.style.transition = 'all .3s';
+                             info.style.transform = 'translateY(0%)';">
+                    <i class="fa-solid fa-plus show-info"></i>
+                </div>
+            </div>
+
+
+
+
+
+
+            <div class="bg-black bg-opacity-75 py-5 info-container" #infoContainer>
+                <div class=" px-0 pb-5 pt-2 rounded-3 text-center bg-white w-75 m-auto info" #info>
+
+
+
+                    <div class="w-100  text-end pe-2 hide-info " (click)=" 
+                                  info.style.opacity = '0%';
+                                  info.style.transition = 'all .3s';
+                                  info.style.transform = 'translateY(-10%)' ;
+                                  infoContainer.style.width = '0%';
+                                  infoContainer.style.transition = 'width 0s ease .3s' ">
+                        <i class="fa-solid fa-xmark me-2 fa-3x"></i>
+                    </div>
+
+
+
+                    <h2 class=" mt-3 ">{{myImg.imgName}}</h2>
+                    <div class="star-style mt-1 mb-5 ">
+                        <i class="fa-solid fa-star"></i><span class="star-style-span"></span>
+                    </div>
+                    <img [src]="myImg.immSrc" class="rounded-3 mt-2 img-info">
+
+
+
+                    <p class="text-center mt-5  m-auto content-info">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil,
+                        molestias
+                        magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta,
+                        eos quod
+                        consequuntur itaque. Nam.
+                    </p>
+
+
+
+                    <button class="mt-5" (click)=" 
+                                                   info.style.opacity = '0%';
+                                                   info.style.transition = 'all .3s';
+                                                   info.style.transform = 'translateY(-10%)' ;
+                                                   infoContainer.style.width = '0%';
+                                                   infoContainer.style.transition = 'width 0s ease .3s' ">
+                        <i class="fa-solid fa-xmark me-2"></i>Close Window</button>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

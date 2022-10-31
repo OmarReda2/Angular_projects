@@ -1,0 +1,7 @@
+// task to search in all movies in TMDB:
+"https://api.themoviedb.org/3/search/movie?api_key=a117cde40d3c3598e3e23d4084f510e2&language=en-US&page=1&include_adult=false&query=harry"
+// // //
+
+"https://api.themoviedb.org/3/movie/now_playing?api_key=a117cde40d3c3598e3e23d4084f510e2&language=en-US&page=1"
+
+"https://api.themoviedb.org/3/movie/414906?api_key=a117cde40d3c3598e3e23d4084f510e2&language=en-US"

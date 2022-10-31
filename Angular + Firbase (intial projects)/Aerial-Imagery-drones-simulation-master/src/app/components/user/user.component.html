@@ -1,0 +1,45 @@
+<div class="p-4">
+
+  <h3>Land Sections</h3>
+  <div class="alert alert-dark">
+    <div class="row">
+
+      <div class="col-4 text-center" *ngFor="let section of landSectionsList">
+        <div class="alert {{sectionColor(section.status)}} rounded-3 p-3 hovered"
+          (click)="isFlying ? this.data.updateLandSection(section.id, !section.status): error()">
+          <span>{{section.id}}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="row">
+    <h3>Drone Action</h3>
+    <div class="col-6">
+      <button class="btn btn-outline-primary mb-5 me-2 w-100" (click)="isFlying = true"
+        [disabled]="isFlying || battery < 20">
+        Take Off
+      </button>
+    </div>
+
+    <div class="col-6">
+      <button class="btn btn-outline-danger mb-5 w-100" (click)="isFlying = false" [disabled]="!isFlying">
+        Land
+      </button>
+    </div>
+
+    <h3>Battery Charge</h3>
+    <div class="col-12">
+      <input class=" form-control mb-5 w-100" [(ngModel)]="battery" (keyup)="this.data.updateBattery(battery)">
+    </div>
+
+
+    <div class="col-12 ms-2">
+      <button class="row text-center btn btn-outline-dark" (click)="logOut()">
+        <h4>Logout</h4>
+      </button>
+    </div>
+  </div>
+</div>

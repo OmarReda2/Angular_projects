@@ -1,0 +1,153 @@
+<div class="p-4">
+
+
+  <!-- Actions -->
+  <!-- --------------------------------------------------------------- -->
+  <div class="action row  text-center alert alert-primary">
+    <h3 class="text-start">Actions</h3>
+
+
+
+
+    <div class="col-6">
+      <div class="police alert {{callPolice().container}} bg-opacity-25 rounded-3">
+        <h4 class=" {{callPolice().txt}}">Call police</h4>
+      </div>
+    </div>
+
+
+
+    <div class="col-6">
+      <div class="tech alert bg-primary bg-opacity-25 rounded-3"
+        [ngClass]="{'bg-danger': this.Battery[0]?.status < 80}">
+        <h4 [ngClass]="{'text-danger': this.Battery[0]?.status < 80 }">Call technican</h4>
+      </div>
+    </div>
+
+
+    <div class="col-6">
+      <div class="backup alert bg-primary bg-opacity-25 rounded-3"
+        [ngClass]="{'bg-danger': this.Battery[0]?.status < 90}">
+        <h4 [ngClass]="{'text-danger': this.Battery[0]?.status < 90}">Backup</h4>
+      </div>
+    </div>
+
+
+    <div class="col-6">
+      <div class="test alert bg-primary bg-opacity-25 rounded-3"
+        [ngClass]="{'bg-danger':  this.Battery[0]?.status < 90}">
+        <h4 [ngClass]="{'text-danger':  this.Battery[0]?.status < 90}">Power supply test</h4>
+      </div>
+    </div>
+  </div>
+  <!-- --------------------------------------------------------------- -->
+
+
+
+
+
+
+
+  <!-- Alarms -->
+  <div class="row alert  alert-info">
+    <h3>Alarms</h3>
+
+    <!-- Doors -->
+    <div class="col-3">
+      <div class="doors bg-opacity-25 rounded-3 p-3 {{alarm('door').container}}">
+        <h4 class="{{alarm('door').txt}}">Doors</h4>
+        <div class="row gy-3">
+
+          <div class="col-6" *ngFor="let door of doorsList" [ngClass]="{'text-danger': door.status == 'open'}">
+            <span>{{door.id}}: </span> <span>{{door.status}}</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- --------------------------------------------------------------- -->
+
+
+
+
+
+    <!-- Windows -->
+    <div class="col-3">
+      <div class="bg-info bg-opacity-25 rounded-3 p-3 {{alarm('window').container}}">
+        <h4 class="{{alarm('window').txt}}">Windows</h4>
+        <div class="row gy-3">
+
+          <div class="col-6" *ngFor="let window of windowsList" [ngClass]="{'text-danger': window.status == 'open'}">
+            <span>{{window.id}}: </span> <span>{{window.status}}</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- --------------------------------------------------------------- -->
+
+
+
+
+
+    <!-- Battery -->
+    <div class="col-3">
+      <div class="bg-opacity-25 rounded-3 p-3" *ngFor="let b1 of Battery" [ngClass]="{
+            'text-danger': b1.status < 80,
+            'bg-danger': b1.status < 80,
+            'bg-info': b1.status >= 80
+          }">
+        <h4>Battery</h4>
+        <span>{{b1.status}}%</span>
+      </div>
+    </div>
+    <!-- --------------------------------------------------------------- -->
+
+
+
+
+
+
+    <!-- Motion -->
+    <div class="col-3">
+      <div class="bg-opacity-25 rounded-3 p-3" *ngFor="let m1 of motion" [ngClass]="{
+        'text-danger': m1.status == 'detected',
+        'bg-danger': m1.status == 'detected',
+        'bg-info': m1.status == 'not detected'
+      }">
+        <h4>Motion</h4>
+        <span>{{m1.status}}</span>
+      </div>
+    </div>
+  </div>
+  <!-- --------------------------------------------------------------- -->
+
+
+
+
+
+
+
+  <!-- Clear-Alarm Command -->
+  <div class="row text-center alert alert-warning">
+
+    <h4 class="text-start">Clear-Alram Commands</h4>
+    <input type="text" class="form-control bg-warning bg-opacity-25 border-0" [(ngModel)]="command"
+      (keyup)="checkCommand()">
+  </div>
+  <!-- --------------------------------------------------------------- -->
+
+
+
+
+
+
+
+  <!-- logout -->
+  <button class="row text-center btn btn-outline-dark w-100" (click)="logOut()">
+  <h4>Logout</h4>
+  </button>
+  <!-- --------------------------------------------------------------- -->
+</div>
+
+

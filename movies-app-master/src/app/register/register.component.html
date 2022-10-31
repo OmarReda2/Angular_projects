@@ -1,0 +1,69 @@
+<div class="container bg-black bg-opacity-50 p-5 rounded-3 mb-5">
+    <h4 class="mb-3">registeration form:</h4>
+
+
+
+    <form [formGroup]="userForm" (ngSubmit)="showFormData()">
+
+        <div class="mb-3 w-100">
+
+            <label>first name</label>
+            <input type="text" class="form-control mb-1" formControlName="first_name">
+            <p class="text-danger" *ngIf="
+            userForm.controls['first_name'].invalid && 
+            userForm.controls['first_name'].touched">
+
+
+                <span class="d-block" *ngIf="userForm.controls['first_name'].errors?.['minlength']">please insert at
+                    least {{userForm.controls['first_name'].errors?.['minlength'].requiredLength}} letters </span>
+                <span class="d-block" *ngIf="userForm.controls['first_name'].errors?.['pattern']">please start with
+                    capital letter</span>
+            </p>
+
+        </div>
+
+
+        <div class="mb-3 w-100">
+            <label>last name</label>
+            <input type="text" class="form-control mb-1" formControlName="last_name">
+            <p class="text-danger" *ngIf="
+            userForm.controls['last_name'].invalid && 
+            userForm.controls['last_name'].touched">please insert letter from 3 - 10 and start with CAPITAL</p>
+        </div>
+
+
+        <div class="mb-3 w-100">
+            <label>age</label>
+            <input type="number" class="form-control mb-1" formControlName="age">
+            <p class="text-danger" *ngIf="
+            userForm.controls['age'].invalid && 
+            userForm.controls['age'].touched">please insert age from 10 - 50</p>
+        </div>
+
+
+        <div class="mb-3 w-100">
+            <label>email</label>
+            <input type="email" class="form-control mb-1" formControlName="email">
+            <p class="text-danger" *ngIf="
+            userForm.controls['email'].invalid && 
+            userForm.controls['email'].touched">please enter a correct email e.g example@example.com</p>
+        </div>
+
+
+        <div class="mb-3 w-100">
+            <label>password</label>
+            <input type="password" class="form-control mb-1" formControlName="password">
+            <p class="text-danger" *ngIf="
+            userForm.controls['password'].invalid && 
+            userForm.controls['password'].touched">please insert letter from 3 - 10 and start</p>
+        </div>
+
+
+        <button class="btn btn-info" [disabled]="userForm.invalid && userForm.touched">register</button>
+        <!-- <button class="btn btn-info">register</button> -->
+
+        <h4 class="text-danger mt-3">{{msg}}</h4>
+
+    </form>
+
+</div>

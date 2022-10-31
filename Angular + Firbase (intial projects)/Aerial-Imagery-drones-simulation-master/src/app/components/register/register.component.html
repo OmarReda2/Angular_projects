@@ -1,0 +1,24 @@
+
+
+<div class="container-fluid">
+
+  <div class="w-50 m-auto mt-5 card card-body">
+    <form>
+      <div class="mb-3 text-secondary" style="cursor:pointer ;">
+        <span class="text-primary">Register</span>  <span class="ms-3 te" routerLink="/login" >Login</span>
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" [(ngModel)]="email">
+      </div>
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" [(ngModel)]="password">
+      </div>
+
+      <button type="button" class="btn btn-primary" (click)="register()">Register</button>
+    </form>
+  </div>
+</div>
